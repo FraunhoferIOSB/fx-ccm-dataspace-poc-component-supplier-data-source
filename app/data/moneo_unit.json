@@ -1,0 +1,23 @@
+{
+  "unit": {
+    "Symbol": "°C",
+    "Quantity": "temperature",
+    "NameOfUnit": "celsius",
+    "PresentationUnit": null
+  },
+  "decodingInfo": {
+    "Unit": "°C",
+    "Offset": null,
+    "ValueRanges": [
+      {
+        "Max": 1500.0,
+        "Min": -400.0,
+        "Text": null,
+        "TextId": null
+      }
+    ],
+    "DisplayFormat": "Dec.1",
+    "TranslatedName": "Temperature",
+    "TranslatedDescription": "Temperature"
+  }
+}
