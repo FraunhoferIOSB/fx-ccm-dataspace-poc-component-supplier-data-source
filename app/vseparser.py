@@ -1,15 +1,4 @@
-import math
 import struct
-
-
-# Trim lists from zeros to keep result short
-def trim_zeros_custom(arr):
-    tolerance = 1e-9
-    arr = list(filter(lambda x: not math.isclose(x, 0.0, abs_tol=tolerance), arr))
-    arr.reverse()
-    arr = list(filter(lambda x: not math.isclose(x, 0.0, abs_tol=tolerance), arr))
-    arr.reverse()
-    return arr
 
 
 # Corrected function to parse the header
@@ -78,7 +67,7 @@ def parse_dfdata_source(data):
         "name": source_data[11].decode('utf-16').replace("\x00", ""),
         "inputName": source_data[12].decode('utf-16').replace("\x00", ""),
         "unitString": source_data[13].decode('utf-16').replace("\x00", ""),
-        "parameters": trim_zeros_custom(list(source_data[14:21])),
+        "parameters": list(source_data[14:21]),
         "objectType": source_data[21],
         "deviceName": source_data[22].decode('utf-16').replace("\x00", ""),
         "deviceType": source_data[23],
@@ -107,7 +96,7 @@ def parse_dfdata_stream(data):
         "valueCount": stream_data[3],
         "sampleRateDivider": stream_data[4],
         "engUnit": stream_data[5],
-        "values": trim_zeros_custom(list(stream_data[6:]))
+        "values": list(stream_data[6:])
     }
 
     return data_stream, stream_size
