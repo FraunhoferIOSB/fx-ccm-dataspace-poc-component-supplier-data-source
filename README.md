@@ -21,6 +21,13 @@ FastAPI:
 uvicorn app.datagenerator:app --host 0.0.0.0 --port 80
 ```
 
+or
+
+```bash
+python -m uvicorn app.datagenerator:app --host 0.0.0.0 --port 80
+```
+
+
 ## Build Docker Container
 
 Build Docker-Image:
